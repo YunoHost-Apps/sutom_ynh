@@ -24,7 +24,7 @@ Jeu de lettres en ligne (et en français) basé sur Wordle. Le jeu se trouve à 
 
 ## Screenshots
 
-![](./doc/screenshots/example.jpg)
+![](./doc/screenshots/screenshot.png)
 
 ## Disclaimers / important information
 
