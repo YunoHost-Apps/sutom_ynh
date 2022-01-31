@@ -111,7 +111,7 @@ ynh_script_progression --message="Building Sutom... (this will take some time an
 pushd "$final_path"
 	ynh_use_nodejs
 	ynh_exec_warn_less npm i -g npm
-	ynh_exec_warn_less npm install
+	ynh_exec_warn_less npm install --production
 popd
 
 #=================================================
