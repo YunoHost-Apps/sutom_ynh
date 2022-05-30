@@ -6,10 +6,11 @@ After=network.target
 Type=simple
 User=__APP__
 Group=__APP__
-WorkingDirectory=__FINALPATH__
-Environment="PATH=__ENV_PATH__"
+WorkingDirectory=__FINALPATH__/
+Environment="__YNH_NODE_LOAD_PATH__"
+Environment="SUTOM_PORT=__PORT__"
 Environment="NODE_ENV=production"
-ExecStart=__YNH_NPM__ start
+ExecStart=__YNH_NPM__ run start:prod
 Restart=always
 
 # Sandboxing options to harden security

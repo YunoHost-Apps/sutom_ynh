@@ -6,7 +6,7 @@
         "en": "Wordle-based online word game",
         "fr": "Jeu de lettres en ligne basé sur Wordle"
     },
-    "version": "1.0.0~ynh2",
+    "version": "1.0.0~ynh3",
     "url": "https://sutom.nocle.fr/",
     "upstream": {
         "license": "MIT",
@@ -22,12 +22,12 @@
     "requirements": {
         "yunohost": ">= 4.3.0"
     },
-    "multi_instance": false,
+    "multi_instance": true,
     "services": [
         "nginx"
     ],
     "arguments": {
-        "install" : [
+        "install": [
             {
                 "name": "domain",
                 "type": "domain"
@@ -41,10 +41,6 @@
             {
                 "name": "is_public",
                 "type": "boolean",
-                "help": {
-                    "en": "If enabled, Sutom will be accessible by people who do not have an account. This can be changed later via the webadmin.",
-                    "fr": "Si cette case est cochée, Sutom sera accessible aux personnes n’ayant pas de compte. Vous pourrez changer ceci plus tard via la webadmin."
-                },
                 "default": true
             }
         ]
