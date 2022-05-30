@@ -113,6 +113,7 @@ pushd "$final_path"
 	ynh_use_nodejs
 	ynh_exec_warn_less ynh_exec_as $app NODE_ENV=production $ynh_node_load_PATH $ynh_npm install --production
 	ynh_exec_warn_less ynh_exec_as $app NODE_ENV=production $ynh_node_load_PATH ./node_modules/.bin/tsc
+	ln -sf $final_path/public/js/mots/listeMotsProposables.js $final_path/public/js/mots/listeMotsProposables.9.D.js
 popd
 
 #=================================================
