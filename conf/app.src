@@ -1,6 +1,7 @@
-SOURCE_URL=url of app's source
-SOURCE_SUM=sha256 checksum
+SOURCE_URL=https://framagit.org/JonathanMM/sutom/-/archive/05e6dfe28c1ebfebff4f22d99f68b2bbb2127569/sutom-05e6dfe28c1ebfebff4f22d99f68b2bbb2127569.tar.gz
+SOURCE_SUM=7428b08b0ca8c20c75b804e555ac77815d399c73f154b62f4a4d098f3bc53916
 SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=tar.gz
 SOURCE_IN_SUBDIR=true
+SOURCE_FILENAME=
 SOURCE_EXTRACT=true

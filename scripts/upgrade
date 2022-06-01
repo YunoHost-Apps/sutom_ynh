@@ -35,6 +35,7 @@ ynh_script_progression --message="Backing up the app before upgrading (may take 
 # Backup the current version of the app
 ynh_backup_before_upgrade
 ynh_clean_setup () {
+	ynh_clean_check_starting
 	# Restore it if the upgrade fails
 	ynh_restore_upgradebackup
 }
@@ -79,11 +80,7 @@ then
 	ynh_script_progression --message="Upgrading source files..." --weight=1
 
 	# Download, check integrity, uncompress and patch the source from app.src
-	#ynh_setup_source --dest_dir="$final_path"
-	pushd $final_path
-		git fetch
-    #git checkout master
-    git reset --hard --quiet $version_commit
+	ynh_setup_source --dest_dir="$final_path"
 fi
 
 chmod 750 "$final_path"
@@ -103,9 +100,10 @@ ynh_add_nginx_config
 #=================================================
 ynh_script_progression --message="Upgrading dependencies..." --weight=10
 
-# Install Nodejs
 ynh_exec_warn_less ynh_install_nodejs --nodejs_version=$nodejs_version
 
+#=================================================
+# SPECIFIC UPGRADE
 #==============================================
 # INSTALL SUTOM
 #==============================================
@@ -113,16 +111,15 @@ ynh_script_progression --message="Building Sutom... (this will take some time an
 
 pushd "$final_path"
 	ynh_use_nodejs
-	ynh_exec_warn_less npm i -g npm
-	ynh_exec_warn_less npm install --production
+	ynh_exec_warn_less ynh_exec_as $app NODE_ENV=production $ynh_node_load_PATH $ynh_npm install --production
+	ynh_exec_warn_less ynh_exec_as $app NODE_ENV=production $ynh_node_load_PATH ./node_modules/.bin/tsc
+	ln -sf $final_path/public/js/mots/listeMotsProposables.js $final_path/public/js/mots/listeMotsProposables.9.D.js
 popd
 
 #=================================================
 # SETUP SYSTEMD
 #=================================================
 ynh_script_progression --message="Upgrading systemd configuration..." --weight=1
-
-env_path="$PATH"
 
 # Create a dedicated systemd config
 ynh_add_systemd_config
