@@ -6,7 +6,7 @@
         "en": "Wordle-based online word game",
         "fr": "Jeu de lettres en ligne basé sur Wordle"
     },
-    "version": "1.0.0~ynh3",
+    "version": "1.0.0~ynh4",
     "url": "https://sutom.nocle.fr/",
     "upstream": {
         "license": "MIT",
@@ -20,7 +20,7 @@
         "email": ""
     },
     "requirements": {
-        "yunohost": ">= 4.3.0"
+        "yunohost": ">= 11.0.9"
     },
     "multi_instance": true,
     "services": [
