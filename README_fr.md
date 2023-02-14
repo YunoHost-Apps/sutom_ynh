@@ -19,7 +19,7 @@ Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) po
 Jeu de lettres en ligne (et en français) basé sur Wordle. Le jeu se trouve à l'adresse https://sutom.nocle.fr
 
 
-**Version incluse :** 1.0.0~ynh3
+**Version incluse :** 1.0.0~ynh4
 
 **Démo :** https://sutom.nocle.fr/
 
