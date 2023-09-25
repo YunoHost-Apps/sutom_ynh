@@ -42,6 +42,8 @@ ram.runtime = "50M"
         url = "https://framagit.org/JonathanMM/sutom/-/archive/6de079bf0b8a8880ec29b231388b7689b7b3c443/sutom-6de079bf0b8a8880ec29b231388b7689b7b3c443.tar.gz"
         sha256 = "12b6cf5bb186437ddb08391a032b28fafb9c3606ac54b153a05f9495028ded7e"
 
+    [resources.ports]
+
     [resources.system_user]
 
     [resources.install_dir]
