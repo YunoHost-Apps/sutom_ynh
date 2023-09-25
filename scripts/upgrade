@@ -60,6 +60,7 @@ ynh_script_progression --message="Building Sutom... (this will take some time an
 
 pushd "$install_dir"
 	ynh_use_nodejs
+	ynh_exec_warn_less ynh_exec_as $app NODE_ENV=production $ynh_node_load_PATH $ynh_npm install typescript
 	ynh_exec_warn_less ynh_exec_as $app NODE_ENV=production $ynh_node_load_PATH $ynh_npm install --production
 	ynh_exec_warn_less ynh_exec_as $app NODE_ENV=production $ynh_node_load_PATH ./node_modules/.bin/tsc
 	ln -sf $install_dir/public/js/mots/listeMotsProposables.js $install_dir/public/js/mots/listeMotsProposables.9.D.js
