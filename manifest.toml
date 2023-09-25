@@ -5,7 +5,7 @@ name = "Sutom"
 description.en = "Wordle-based online word game"
 description.fr = "Jeu de lettres en ligne basé sur Wordle"
 
-version = "1.0.0~ynh5"
+version = "1.0.0~ynh6"
 
 maintainers = []
 
