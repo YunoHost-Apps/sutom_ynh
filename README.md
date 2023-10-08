@@ -31,7 +31,6 @@ Jeu de lettres en ligne (et en français) basé sur Wordle. Le jeu se trouve à 
 
 * Official app website: <https://sutom.nocle.fr/>
 * Upstream app code repository: <https://framagit.org/JonathanMM/sutom>
-* YunoHost documentation for this app: <https://yunohost.org/app_sutom>
 * Report a bug: <https://github.com/YunoHost-Apps/sutom_ynh/issues>
 
 ## Developer info
