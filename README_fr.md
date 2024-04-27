@@ -19,7 +19,7 @@ Il NE doit PAS être modifié à la main.
 Jeu de lettres en ligne (et en français) basé sur Wordle. Le jeu se trouve à l'adresse https://sutom.nocle.fr
 
 
-**Version incluse :** 2023.06.13~ynh1
+**Version incluse :** 2023.06.13~ynh1
 
 **Démo :** <https://sutom.nocle.fr/>
 
