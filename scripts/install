@@ -1,74 +1,67 @@
 #!/bin/bash
 
-#=================================================
-# GENERIC START
-#=================================================
-# IMPORT GENERIC HELPERS
-#=================================================
-
 source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
 # INSTALL DEPENDENCIES
 #=================================================
-ynh_script_progression --message="Installing dependencies..." --weight=6
+ynh_script_progression "Installing dependencies..."
 
 # Install Nodejs
-ynh_exec_warn_less ynh_install_nodejs --nodejs_version=$nodejs_version
+ynh_nodejs_install
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
-ynh_script_progression --message="Setting up source files..." --weight=1
+ynh_script_progression "Setting up source files..."
 
 # Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source --dest_dir="$install_dir"
-ynh_replace_string --match_string="https://sutom.nocle.fr" --replace_string="https://$domain$path" --target_file="$install_dir/ts/finDePartiePanel.ts"
+ynh_replace --match="https://sutom.nocle.fr" --replace="https://$domain$path" --file="$install_dir/ts/finDePartiePanel.ts"
 
-chmod -R o-rwx "$install_dir"
-chown -R $app:www-data "$install_dir"
-
+#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod -R o-rwx "$install_dir"
+#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown -R $app:www-data "$install_dir"
 #=================================================
 # NGINX CONFIGURATION
 #=================================================
-ynh_script_progression --message="Configuring NGINX web server..." --weight=1
+ynh_script_progression "Configuring NGINX web server..."
 
 # Create a dedicated NGINX config
-ynh_add_nginx_config
+ynh_config_add_nginx
 
 #==============================================
 # INSTALL SUTOM
 #==============================================
-ynh_script_progression --message="Building Sutom... (this will take some time and resources!)" --weight=20
+ynh_script_progression "Building Sutom... (this will take some time and resources!)"
 
 pushd "$install_dir"
-	ynh_use_nodejs
-	ynh_exec_warn_less ynh_exec_as $app NODE_ENV=production $ynh_node_load_PATH $ynh_npm install --production
-	ynh_exec_warn_less ynh_exec_as $app NODE_ENV=production $ynh_node_load_PATH ./node_modules/.bin/tsc
+
+	ynh_hide_warnings ynh_exec_as_app NODE_ENV=production node_load_PATH npm install --production
+	ynh_hide_warnings ynh_exec_as_app NODE_ENV=production node_load_PATH ./node_modules/.bin/tsc
 	ln -sf $install_dir/public/js/mots/listeMotsProposables.js $install_dir/public/js/mots/listeMotsProposables.9.D.js
 popd
 
 #=================================================
 # SETUP SYSTEMD
 #=================================================
-ynh_script_progression --message="Configuring a systemd service..." --weight=1
+ynh_script_progression "Configuring $app's systemd service..."
 
 # Create a dedicated systemd config
-ynh_add_systemd_config
+ynh_config_add_systemd
 
 yunohost service add $app --description="Online word game" --log="/var/log/$app/$app.log"
 
 #=================================================
 # START SYSTEMD SERVICE
 #=================================================
-ynh_script_progression --message="Starting a systemd service..." --weight=1
+ynh_script_progression "Starting $app's systemd service..."
 
 # Start a systemd service
-ynh_systemd_action --service_name=$app --action="start" --log_path="systemd" --line_match="Jeu démarré"
+ynh_systemctl --service=$app --action="start" --log_path="systemd" --wait_until="Jeu démarré"
 
 #=================================================
 # END OF SCRIPT
 #=================================================
 
-ynh_script_progression --message="Installation of $app completed" --last
+ynh_script_progression "Installation of $app completed"
