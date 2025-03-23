@@ -39,7 +39,7 @@ chown -R $app:www-data "$install_dir"
 #=================================================
 # UPGRADE DEPENDENCIES
 #=================================================
-#REMOVEME? ynh_script_progression --message="Upgrading dependencies..." --weight=10
+ynh_script_progression --message="Upgrading dependencies..." --weight=10
 
 ynh_exec_warn_less ynh_install_nodejs --nodejs_version=$nodejs_version
 
