@@ -5,7 +5,9 @@ NON debe editarse manualmente.
 
 # Sutom para YunoHost
 
-[![Nivel de integración](https://dash.yunohost.org/integration/sutom.svg)](https://dash.yunohost.org/appci/app/sutom) ![Estado de funcionamento](https://ci-apps.yunohost.org/ci/badges/sutom.status.svg) ![Estado de mantemento](https://ci-apps.yunohost.org/ci/badges/sutom.maintain.svg)
+[![Nivel de integración](https://apps.yunohost.org/badge/integration/sutom)](https://ci-apps.yunohost.org/ci/apps/sutom/)
+![Estado de funcionamento](https://apps.yunohost.org/badge/state/sutom)
+![Estado de mantemento](https://apps.yunohost.org/badge/maintained/sutom)
 
 [![Instalar Sutom con YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=sutom)
 
