@@ -5,7 +5,9 @@ No se debe editar a mano.
 
 # Sutom para Yunohost
 
-[![Nivel de integración](https://dash.yunohost.org/integration/sutom.svg)](https://dash.yunohost.org/appci/app/sutom) ![Estado funcional](https://ci-apps.yunohost.org/ci/badges/sutom.status.svg) ![Estado En Mantención](https://ci-apps.yunohost.org/ci/badges/sutom.maintain.svg)
+[![Nivel de integración](https://apps.yunohost.org/badge/integration/sutom)](https://ci-apps.yunohost.org/ci/apps/sutom/)
+![Estado funcional](https://apps.yunohost.org/badge/state/sutom)
+![Estado En Mantención](https://apps.yunohost.org/badge/maintained/sutom)
 
 [![Instalar Sutom con Yunhost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=sutom)
 
@@ -36,7 +38,7 @@ Jeu de lettres en ligne (et en français) basé sur Wordle. Le jeu se trouve à 
 
 ## Información para desarrolladores
 
-Por favor enviar sus correcciones a la [`branch testing`](https://github.com/YunoHost-Apps/sutom_ynh/tree/testing
+Por favor enviar sus correcciones a la [rama `testing`](https://github.com/YunoHost-Apps/sutom_ynh/tree/testing).
 
 Para probar la rama `testing`, sigue asÍ:
 

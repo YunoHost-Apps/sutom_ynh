@@ -5,7 +5,9 @@ EZ editatu eskuz.
 
 # Sutom YunoHost-erako
 
-[![Integrazio maila](https://dash.yunohost.org/integration/sutom.svg)](https://dash.yunohost.org/appci/app/sutom) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/sutom.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/sutom.maintain.svg)
+[![Integrazio maila](https://apps.yunohost.org/badge/integration/sutom)](https://ci-apps.yunohost.org/ci/apps/sutom/)
+![Funtzionamendu egoera](https://apps.yunohost.org/badge/state/sutom)
+![Mantentze egoera](https://apps.yunohost.org/badge/maintained/sutom)
 
 [![Instalatu Sutom YunoHost-ekin](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=sutom)
 

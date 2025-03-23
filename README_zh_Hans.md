@@ -5,7 +5,9 @@
 
 # YunoHost 上的 Sutom
 
-[![集成程度](https://dash.yunohost.org/integration/sutom.svg)](https://dash.yunohost.org/appci/app/sutom) ![工作状态](https://ci-apps.yunohost.org/ci/badges/sutom.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/sutom.maintain.svg)
+[![集成程度](https://apps.yunohost.org/badge/integration/sutom)](https://ci-apps.yunohost.org/ci/apps/sutom/)
+![工作状态](https://apps.yunohost.org/badge/state/sutom)
+![维护状态](https://apps.yunohost.org/badge/maintained/sutom)
 
 [![使用 YunoHost 安装 Sutom](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=sutom)
 
