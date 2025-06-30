@@ -7,10 +7,10 @@ Type=simple
 User=__APP__
 Group=__APP__
 WorkingDirectory=__INSTALL_DIR__/
-Environment="__YNH_NODE_LOAD_PATH__"
+Environment="PATH=__PATH_WITH_NODEJS__"
 Environment="SUTOM_PORT=__PORT__"
 Environment="NODE_ENV=production"
-ExecStart=__YNH_NPM__ run start:prod
+ExecStart=__NODEJS_DIR__/npm run start:prod
 Restart=always
 
 # Sandboxing options to harden security
