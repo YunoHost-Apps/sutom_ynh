@@ -19,12 +19,10 @@ ynh_script_progression "Upgrading source files..."
 ynh_setup_source --dest_dir="$install_dir"
 ynh_replace --match="https://sutom.nocle.fr" --replace="https://$domain$path" --file="$install_dir/ts/finDePartiePanel.ts"
 
-#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod -R o-rwx "$install_dir"
-#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown -R $app:www-data "$install_dir"
 #=================================================
 # UPGRADE DEPENDENCIES
 #=================================================
-#REMOVEME? ynh_script_progression "Upgrading dependencies..."
+ynh_script_progression "Upgrading dependencies..."
 
 ynh_nodejs_install
 
@@ -42,7 +40,6 @@ yunohost service add $app --description="Online word game" --log="/var/log/$app/
 ynh_script_progression "Building Sutom... (this will take some time and resources!)"
 
 pushd "$install_dir"
-
 	ynh_hide_warnings ynh_exec_as_app NODE_ENV=production node_load_PATH npm install --production
 	ynh_hide_warnings ynh_exec_as_app NODE_ENV=production node_load_PATH ./node_modules/.bin/tsc
 	ln -sf $install_dir/public/js/mots/listeMotsProposables.js $install_dir/public/js/mots/listeMotsProposables.9.D.js
