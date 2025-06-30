@@ -40,8 +40,8 @@ yunohost service add $app --description="Online word game" --log="/var/log/$app/
 ynh_script_progression "Building Sutom... (this will take some time and resources!)"
 
 pushd "$install_dir"
-	ynh_hide_warnings ynh_exec_as_app NODE_ENV=production node_load_PATH npm install --production
-	ynh_hide_warnings ynh_exec_as_app NODE_ENV=production node_load_PATH ./node_modules/.bin/tsc
+	ynh_hide_warnings ynh_exec_as_app npm install --production
+	ynh_hide_warnings ynh_exec_as_app ./node_modules/.bin/tsc
 	ln -sf $install_dir/public/js/mots/listeMotsProposables.js $install_dir/public/js/mots/listeMotsProposables.9.D.js
 popd
 

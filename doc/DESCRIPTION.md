@@ -1,1 +1,1 @@
-Jeu de lettres en ligne (et en français) basé sur Wordle. Le jeu se trouve à l'adresse https://sutom.nocle.fr
+Online word game based on Wordle. The game can be found at https://sutom.nocle.fr
