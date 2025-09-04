@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 source /usr/share/yunohost/helpers
 
 #=================================================
@@ -23,8 +22,6 @@ ynh_replace --match="https://sutom.nocle.fr" --replace="https://$domain$path" --
 # UPGRADE DEPENDENCIES
 #=================================================
 ynh_script_progression "Upgrading dependencies..."
-
-#REMOVEME? ynh_nodejs_install
 
 # Create a dedicated NGINX config
 ynh_config_add_nginx
