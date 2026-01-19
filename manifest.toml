@@ -5,7 +5,7 @@ name = "Sutom"
 description.en = "Wordle-based online word game"
 description.fr = "Jeu de lettres en ligne basé sur Wordle"
 
-version = "2025.06.23~ynh1"
+version = "2026.01.13~ynh1"
 
 maintainers = []
 
@@ -16,7 +16,7 @@ demo = "https://sutom.nocle.fr/"
 code = "https://framagit.org/JonathanMM/sutom"
 
 [integration]
-yunohost = ">= 12.1.17"
+yunohost = ">= 12.1.38"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
@@ -42,8 +42,8 @@ ram.runtime = "50M"
 
 [resources]
     [resources.sources.main]
-    url = "https://framagit.org/JonathanMM/sutom/-/archive/1274ccd3084ae82b1efedd5bd1c27e1ecb834c05/sutom-1274ccd3084ae82b1efedd5bd1c27e1ecb834c05.tar.bz2"
-    sha256 = "69fd3d32b5ab6a20a6d0fbf30f6f6ca025070cb05cdd99ee3d9e8647dedb4503"
+    url = "https://framagit.org/JonathanMM/sutom/-/archive/fcc664239663eaa69386e302fc4be435e617e482/sutom-fcc664239663eaa69386e302fc4be435e617e482.tar.bz2"
+    sha256 = "cceb8f8c3b0e7eb74e04841e3b158c61ef70c12d1d47636521185adebb85ce23"
     autoupdate.strategy = "latest_gitlab_commit"
 
     [resources.system_user]
